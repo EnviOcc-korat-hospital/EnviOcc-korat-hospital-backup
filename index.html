@@ -58,17 +58,44 @@
   <!-- Main System Content (โครงสร้างระบบภายในคงเดิม 100%) -->
   <div id="systemContent" class="d-none">
     <!-- Navbar Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-korat shadow-sm sticky-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#">
-          <i class="fa-solid fa-hospital-user me-2"></i>ระบบติดตามการปรับปรุงแก้ไขหลังการประเมินมาตรฐานโรงพยาบาล
-        </a>
-        <div id="navbarUserArea" class="d-flex align-items-center gap-3 d-none">
-          <span id="userInfo" class="text-white small fw-medium"></span>
-          <button id="btnLogout" class="btn btn-outline-light btn-sm fw-bold rounded-pill px-3" onclick="logout()">
+    <!-- Navbar Header (ปรับแก้สีเขียว + จัดเรียง 3 บรรทัด) -->
+    <nav class="navbar navbar-dark shadow-sm sticky-top py-2" style="background-color: #1e7e34 !important;">
+      <div class="container d-flex flex-column align-items-center text-center">
+        
+        <!-- บรรทัดที่ 1: ชื่อระบบหัวข้อหลัก -->
+        <div class="fw-bold text-white mb-1 d-flex align-items-center justify-content-center gap-2" style="font-size: 1.15rem;">
+          <i class="fa-solid fa-hospital-user"></i>
+          <span>ระบบติดตามการปรับปรุงแก้ไขหลังการประเมินมาตรฐานโรงพยาบาล</span>
+        </div>
+
+        <!-- บรรทัดที่ 2: เคาะลงมาเป็นชื่อ สำนักงานสาธารณสุขจังหวัดนครราชสีมา (ตัวหนังสือสีขาว เล็กลง) -->
+        <div class="text-white-50 mb-1" style="font-size: 0.9rem;">
+          สำนักงานสาธารณสุขจังหวัดนครราชสีมา
+        </div>
+
+        <!-- บรรทัดที่ 3: เคาะลงมาเป็น ไอคอนโรงพยาบาล หน่วยงาน | ไอคอนคน ชื่อผู้ใช้งาน | ปุ่มออกจากระบบ -->
+        <div id="navbarUserArea" class="d-flex flex-wrap align-items-center justify-content-center gap-2 d-none" style="font-size: 0.85rem;">
+          
+          <span class="text-white d-inline-flex align-items-center gap-1">
+            <i class="fa-solid fa-hospital"></i>
+            <span>หน่วยงาน :</span>
+            <strong id="displayHospitalName">-</strong>
+          </span>
+
+          <span class="text-white-50 mx-1">|</span>
+
+          <span class="text-white d-inline-flex align-items-center gap-1">
+            <i class="fa-solid fa-user"></i>
+            <span>ชื่อผู้ใช้งาน :</span>
+            <strong id="displayUserName">-</strong>
+          </span>
+
+          <button id="btnLogout" class="btn btn-outline-light btn-sm rounded-pill ms-2 px-3 py-0" onclick="logout()" style="font-size: 0.8rem; height: 26px; line-height: 24px;">
             <i class="fa-solid fa-right-from-bracket me-1"></i> ออกจากระบบ
           </button>
+
         </div>
+
       </div>
     </nav>
 
