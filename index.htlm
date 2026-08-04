@@ -262,7 +262,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     // ⚠️ Web App URL ของคุณ
-    const GAS_WEB_APP_URL = " https://script.google.com/macros/s/AKfycbyDKlZJxNvf4kOY-3d4eLoNmVEQv7yMgn6DKXA8lTWTNuiRsi3zSNP2zrfIF_aVAmgrng/exec";
+    const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyDKlZJxNvf4kOY-3d4eLoNmVEQv7yMgn6DKXA8lTWTNuiRsi3zSNP2zrfIF_aVAmgrng/exec";
     let currentUser = null;
     let allSubmissions = [];
     let hospitalList = [];
