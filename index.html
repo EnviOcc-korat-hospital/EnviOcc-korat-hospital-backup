@@ -20,11 +20,10 @@
 </head>
 <body>
 
-  <!-- Full-Screen Login Section (พื้นหลังสีเขียว-เขียวอ่อน) -->
+  <!-- Full-Screen Login Section -->
   <div id="loginSection" class="min-vh-100 d-flex align-items-center justify-content-center bg-green-gradient py-5 px-3">
     <div class="card shadow-lg border-0 rounded-4 p-4 p-md-5" style="max-width: 500px; width: 100%;">
       <div class="text-center mb-4">
-        <!-- ส่วนรูปภาพโลโก้/ไอคอนหน้า Login (สามารถเปลี่ยนลิงก์รูปภาพใน src ได้ตามต้องการ) -->
         <div class="mb-3">
           <img src="logo.png" alt="Logo" class="rounded-circle shadow-sm bg-light p-2" style="width: 80px; height: 80px; object-fit: contain;">
         </div>
@@ -47,7 +46,6 @@
           <label class="form-label fw-bold text-secondary small">ชื่อผู้เข้าใช้งาน</label>
           <input type="text" id="loginSenderName" class="form-control form-control-lg fs-6" placeholder="กรอกชื่อ-นามสกุลผู้ใช้งาน" required>
         </div>
-        <!-- ปุ่มเข้าสู่ระบบ สีฟ้า -->
         <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold py-2 shadow-sm" style="background-color: #0d6efd; border-color: #0d6efd;">
           <i class="fa-solid fa-right-to-bracket me-2"></i>เข้าสู่ระบบ
         </button>
@@ -55,26 +53,23 @@
     </div>
   </div>
 
-  <!-- Main System Content (โครงสร้างระบบภายในคงเดิม 100%) -->
+  <!-- Main System Content -->
   <div id="systemContent" class="d-none">
     <!-- Navbar Header -->
-    <!-- Navbar Header (ปรับแก้สีเขียว + จัดเรียง 3 บรรทัด) -->
     <nav class="navbar navbar-dark shadow-sm sticky-top py-2" style="background-color: #1e7e34 !important;">
       <div class="container d-flex flex-column align-items-center text-center">
         
-        <!-- บรรทัดที่ 1: ชื่อระบบหัวข้อหลัก -->
         <div class="fw-bold text-white mb-1 d-flex align-items-center justify-content-center gap-2" style="font-size: 1.15rem;">
           <i class="fa-solid fa-hospital-user"></i>
           <span>ระบบติดตามการปรับปรุงแก้ไขหลังการประเมินมาตรฐานโรงพยาบาล</span>
         </div>
 
-        <!-- บรรทัดที่ 2: เคาะลงมาเป็นชื่อ สำนักงานสาธารณสุขจังหวัดนครราชสีมา (ตัวหนังสือสีขาว เล็กลง) -->
         <div class="text-white-50 mb-1" style="font-size: 0.9rem;">
           สำนักงานสาธารณสุขจังหวัดนครราชสีมา
         </div>
 
-        <!-- บรรทัดที่ 3: เคาะลงมาเป็น ไอคอนโรงพยาบาล หน่วยงาน | ไอคอนคน ชื่อผู้ใช้งาน | ปุ่มออกจากระบบ -->
-        <div id="navbarUserArea" class="d-flex flex-wrap align-items-center justify-content-center gap-2 d-none" style="font-size: 0.85rem;">
+        <!-- จุดสำคัญ: ใช้ id="userInfo" ครอบส่วนนี้ตามโครงสร้างเดิม เพื่อเชื่อมข้อมูล -->
+        <div id="userInfo" class="d-flex flex-wrap align-items-center justify-content-center gap-2 d-none" style="font-size: 0.85rem;">
           
           <span class="text-white d-inline-flex align-items-center gap-1">
             <i class="fa-solid fa-hospital"></i>
@@ -100,7 +95,6 @@
     </nav>
 
     <div class="container py-4">
-      <!-- สรุปสถานะ (Dashboard Cards) -->
       <div class="row g-3 mb-4">
         <div class="col-12 col-sm-6 col-md-3">
           <div class="card card-stat bg-white shadow-sm p-3 border-start border-4 border-primary">
@@ -127,7 +121,7 @@
           </div>
         </div>
       </div>
-      <!-- ปุ่มส่งงาน & ตัวกรอง -->
+      
       <div class="card border-0 shadow-sm rounded-4 p-3 mb-4">
         <div class="row g-3 align-items-center">
           <div class="col-12 col-md-4">
@@ -151,7 +145,7 @@
           </div>
         </div>
       </div>
-      <!-- ตารางแสดงรายการข้อมูล -->
+
       <div class="card border-0 shadow-sm rounded-4 p-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h5 class="fw-bold text-dark mb-0"><i class="fa-solid fa-list-check me-2 text-primary"></i>รายการติดตามการแก้ไข</h5>
@@ -289,7 +283,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     // ⚠️ Web App URL ของคุณ 
-const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyXNY7x7vHJNi6z20NNpNU70LLKQQgJJ0pBH9yAingBwHgl-KzZZRnn1z5Sn_OONOKFgg/exec";
+    const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyXNY7x7vHJNi6z20NNpNU70LLKQQgJJ0pBH9yAingBwHgl-KzZZRnn1z5Sn_OONOKFgg/exec";
     let currentUser = null;
     let allSubmissions = [];
     let hospitalList = [];
@@ -453,21 +447,26 @@ const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyXNY7x7vHJNi6z
       Swal.fire({ icon: 'info', title: 'ออกจากระบบแล้ว', timer: 1200, showConfirmButton: false });
     }
 
+    // จุดสำคัญ: ฟังก์ชันอัปเดตข้อมูลเชื่อมต่อกับ id ให้สมบูรณ์แบบ 100%
     function updateUserUI() {
       const loginSection = document.getElementById("loginSection");
       const systemContent = document.getElementById("systemContent");
-      const navbarUserArea = document.getElementById("navbarUserArea");
-      const userInfo = document.getElementById("userInfo");
+      const userInfo = document.getElementById("userInfo"); // เรียกใช้ id="userInfo"
+      const displayHospitalName = document.getElementById("displayHospitalName"); // ส่งชื่อรพ.
+      const displayUserName = document.getElementById("displayUserName"); // ส่งชื่อคนใช้งาน
       const btnNewSubmit = document.getElementById("btnNewSubmit");
       const formSender = document.getElementById("formSenderName");
 
       if (currentUser) {
         loginSection.classList.add("d-none");
         systemContent.classList.remove("d-none");
-        navbarUserArea.classList.remove("d-none");
-        userInfo.innerText = `👤 ${currentUser.name} (${currentUser.role}) | ผู้ส่ง: ${currentUser.senderName}`;
         
-        btnNewSubmit.disabled = (currentUser.role !== "Hospital");
+        if (userInfo) userInfo.classList.remove("d-none");
+        
+        if (displayHospitalName) displayHospitalName.innerText = currentUser.name || "-";
+        if (displayUserName) displayUserName.innerText = currentUser.senderName || "-";
+        
+        if (btnNewSubmit) btnNewSubmit.disabled = (currentUser.role !== "Hospital");
 
         if (formSender) {
           formSender.value = currentUser.senderName;
@@ -475,8 +474,10 @@ const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyXNY7x7vHJNi6z
       } else {
         loginSection.classList.remove("d-none");
         systemContent.classList.add("d-none");
-        navbarUserArea.classList.add("d-none");
-        userInfo.innerText = "";
+        
+        if (userInfo) userInfo.classList.add("d-none");
+        if (displayHospitalName) displayHospitalName.innerText = "-";
+        if (displayUserName) displayUserName.innerText = "-";
       }
       filterData();
     }
@@ -534,6 +535,7 @@ const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyXNY7x7vHJNi6z
       document.getElementById("reviewRowIndex").value = rowIndex;
       document.getElementById("reviewStandardType").value = standardType;
       document.getElementById("reviewStatus").value = status;
+      document.getElementById("reviewGrade").value = status !== "รอตรวจสอบ" ? status : "รอตรวจสอบ";
       document.getElementById("reviewGrade").value = grade !== "-" ? grade : "ผ่านเกณฑ์มาตรฐาน";
       document.getElementById("reviewNotes").value = notes !== "-" ? notes : "";
       reviewModal.show();
@@ -580,4 +582,3 @@ const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyXNY7x7vHJNi6z
   </script>
 </body>
 </html>
-
